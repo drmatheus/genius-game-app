@@ -93,43 +93,44 @@ export const GG = ({ isLogged }: IGG) => {
         />
       </div>
 
-      <span className="p-3 -mb-28 mt-10 bg-gray-transparent m-2 rounded w-fit">{`Nivel atual: ${
+      <div className="bg-gray-transparent  m-auto w-[calc(100vw-1rem)] p-2 rounded-3xl">
+        <div className="bg-gray-700 border-gray-700 border-[10px] flex  relative aspect-square rounded-full overflow-hidden flex-wrap justify-between gap-3 ">
+          <Button
+            text="0"
+            onClick={() => setYourSequencie([...yourSequencie, 0])}
+            className={`min-w-[48%] max-w-[50%] rounded-br-3xl bg-blue-700 aspect-square font-bold ${
+              currentColor === "blue" ? "animate-shinny duration-750" : ""
+            }`}
+          />
+
+          <Button
+            text="1"
+            onClick={() => setYourSequencie([...yourSequencie, 1])}
+            className={`min-w-[48%] max-w-[50%] rounded-bl-3xl bg-yellow-500 aspect-square font-bold ${
+              currentColor === "yellow" ? "animate-shinny duration-750" : ""
+            }`}
+          />
+
+          <Button
+            text="2"
+            onClick={() => setYourSequencie([...yourSequencie, 2])}
+            className={`min-w-[48%] max-w-[50%] rounded-tr-3xl bg-red-700 aspect-square font-bold ${
+              currentColor === "red" ? "animate-shinny duration-750" : ""
+            }`}
+          />
+
+          <Button
+            text="3"
+            onClick={() => setYourSequencie([...yourSequencie, 3])}
+            className={`min-w-[48%] max-w-[50%] rounded-tl-3xl bg-green-700 aspect-square font-bold ${
+              currentColor === "green" ? "animate-shinny duration-750" : ""
+            }`}
+          />
+        </div>
+      </div>
+      <span className="p-3 bg-gray-transparent m-2 rounded w-fit">{`Nivel atual: ${
         sequencie.length >= 4 ? sequencie.length - 3 : 1
       }`}</span>
-
-      <div className="bg-gray-700 border-gray-700 border-[10px] flex w-11/12 relative aspect-square m-auto rounded-full overflow-hidden flex-wrap justify-between gap-3 ">
-        <Button
-          text="0"
-          onClick={() => setYourSequencie([...yourSequencie, 0])}
-          className={`min-w-[48%] max-w-[50%] rounded-br-3xl bg-blue-700 aspect-square font-bold ${
-            currentColor === "blue" ? "animate-shinny duration-750" : ""
-          }`}
-        />
-
-        <Button
-          text="1"
-          onClick={() => setYourSequencie([...yourSequencie, 1])}
-          className={`min-w-[48%] max-w-[50%] rounded-bl-3xl bg-yellow-500 aspect-square font-bold ${
-            currentColor === "yellow" ? "animate-shinny duration-750" : ""
-          }`}
-        />
-
-        <Button
-          text="2"
-          onClick={() => setYourSequencie([...yourSequencie, 2])}
-          className={`min-w-[48%] max-w-[50%] rounded-tr-3xl bg-red-700 aspect-square font-bold ${
-            currentColor === "red" ? "animate-shinny duration-750" : ""
-          }`}
-        />
-
-        <Button
-          text="3"
-          onClick={() => setYourSequencie([...yourSequencie, 3])}
-          className={`min-w-[48%] max-w-[50%] rounded-tl-3xl bg-green-700 aspect-square font-bold ${
-            currentColor === "green" ? "animate-shinny duration-750" : ""
-          }`}
-        />
-      </div>
     </>
   );
 };

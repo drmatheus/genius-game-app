@@ -12,7 +12,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="relative w-screen p-2 flex justify-between bg-green-800 border-none shadow-lg shadow-green-950/25  ">
+    <header className="relative w-screen p-2 flex justify-between bg-green-800 border-none shadow-lg shadow-green-950/25 py-4 ">
       <Link href={`/`} className="text-2xl font-semibold tracking-wider z-10 ">
         Genius Game
       </Link>

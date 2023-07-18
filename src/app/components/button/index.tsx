@@ -4,7 +4,8 @@ interface IPropsButton {
   text: string;
   disabled?: boolean;
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset" | undefined;
 }
 
 export const Button = ({
@@ -12,12 +13,14 @@ export const Button = ({
   disabled,
   className,
   onClick,
+  type,
 }: IPropsButton) => {
   return (
     <button
       onClick={onClick}
       disabled={disabled}
       className={`rounded w-fit p-1 ${className}`}
+      type={type}
     >
       {text}
     </button>
