@@ -26,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col gap-4 overflow-hidden bg-green-700 bg-nature ">
+    <main className="flex min-h-screen flex-col gap-4 overflow-hidden bg-green-700 bg-nature bg-cover">
       <Header />
       <GG isLogged={isLogged} />
       <div className="-mb-4 mx-auto max-w-7xl w-screen flex p-3 gap-2">

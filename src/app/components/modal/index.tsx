@@ -58,7 +58,7 @@ export const ModalLose = ({
 }: IModalLoseProps) => {
   return (
     <>
-      <div className="bg-green-900 w-full p-4 flex gap-2 flex-col rounded  ">
+      <div className="bg-green-900 w-full p-4 flex gap-2 flex-col rounded">
         <h1 className="w-fit h-fit text-3xl rounded mx-auto">
           Sequencia errada!
         </h1>
@@ -101,6 +101,31 @@ export const ModalLose = ({
           </Link>
         </div>
       )}
+    </>
+  );
+};
+
+interface IModalWinProps {
+  sequencie: number[];
+  toogleModal: () => void;
+}
+
+export const ModalWin = ({ sequencie, toogleModal }: IModalWinProps) => {
+  return (
+    <>
+      <div className="bg-green-900 w-full p-4 flex gap-2 flex-col rounded">
+        <h2 className="w-fit h-fit text-3xl rounded mx-auto">
+          Sequencia Correta!
+        </h2>
+        <h3 className="rounded  text-lg w-fit mx-auto">
+          Proximo nivel: {sequencie.length - 2}
+        </h3>
+      </div>
+      <Button
+        className="bg-gray-transparent border-2 px-2 border-white"
+        text="Proximo"
+        onClick={toogleModal}
+      />
     </>
   );
 };

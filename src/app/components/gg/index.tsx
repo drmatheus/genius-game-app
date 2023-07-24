@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../button";
 import { api } from "@/app/services";
-import { Modal, ModalLose } from "../modal";
+import { Modal, ModalLose, ModalWin } from "../modal";
 
 interface IGG {
   isLogged: boolean;
@@ -16,6 +16,7 @@ export const GG = ({ isLogged }: IGG) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const currentColor = colorArray[sequencie[currentIndex]];
   const [isDisabled, setIsDisabled] = useState(true);
+  const [repeat, setRepeat] = useState(0);
 
   //LOSE MODAL
   const [isOpenLose, setIsOpenLose] = useState(false);
@@ -57,7 +58,7 @@ export const GG = ({ isLogged }: IGG) => {
     return () => {
       clearInterval(interval);
     };
-  }, [sequencie]);
+  }, [sequencie, repeat]);
 
   useEffect(() => {
     setCurrentIndex(0);
@@ -68,7 +69,7 @@ export const GG = ({ isLogged }: IGG) => {
     if (sequencie.length > 0 && sequencie.length == yourSequencie.length) {
       const isEqual = sequencie.every((n, i) => n === yourSequencie[i]);
       if (isEqual) {
-        setIsOpenWin(true);       
+        setIsOpenWin(true);
       } else {
         if (isLogged) {
           const saveScores = async () => {
@@ -94,7 +95,10 @@ export const GG = ({ isLogged }: IGG) => {
         />
         <Button
           text="Repetir"
-          onClick={() => setSequencie(sequencie)}
+          onClick={() => {
+            setCurrentIndex(0);
+            setRepeat(repeat + 1);
+          }}
           className="border-2 border-gray-100 w-full  tracking-wider font-bold"
         />
       </div>
@@ -151,19 +155,15 @@ export const GG = ({ isLogged }: IGG) => {
       </Modal>
 
       <Modal isOpen={isOpenWin} onClose={toogleModalWin}>
-        <>
-          <h2>Sequencia Correta!</h2>
-          <h3>Proximo nivel: {sequencie.length - 2}</h3>
-          <Button
-            text="Proximo"
-            onClick={() => {
-              toogleModalWin();
-              setTimeout(() => {
-                setSequencie([...sequencie, Math.floor(Math.random() * 4)]);
-              }, 2000);
-            }}
-          />
-        </>
+        <ModalWin
+          sequencie={sequencie}
+          toogleModal={() => {
+            toogleModalWin();
+            setTimeout(() => {
+              setSequencie([...sequencie, Math.floor(Math.random() * 4)]);
+            }, 2000);
+          }}
+        />
       </Modal>
     </div>
   );

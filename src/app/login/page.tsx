@@ -30,7 +30,7 @@ const Login = () => {
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        const { data: userData } = await api.get("/profile");
+        await api.get("/profile");
         router.push("/");
       } catch (error) {
         console.log(error);
@@ -62,36 +62,33 @@ const Login = () => {
         Entrar
       </h2>
 
-      {
-        !isLoading ? (
-          <form
-            onSubmit={handleSubmit(handleLogin)}
-            className=" py-12 max-w-xl flex flex-col bg-gray-transparent w-[calc(100vw-1rem)] mx-auto rounded p-4 gap-2"
-          >
-            <Input
-              label="Email"
-              type="text"
-              error={errors.email as FieldError}
-              register={register}
-              registerName="email"
-              placeholder="Seu email"
-            />
-            <Input
-              label="Senha"
-              type="password"
-              error={errors.password as FieldError}
-              register={register}
-              registerName="password"
-              placeholder="Sua senha"
-            />
-            <Button
-              text="Entrar"
-              className="bg-green-700 text-2xl font-bold h-12 w-full mt-2"
-            />
-          </form>
-        ) : null
-        // <Loading />
-      }
+      {!isLoading ? (
+        <form
+          onSubmit={handleSubmit(handleLogin)}
+          className=" py-12 max-w-xl flex flex-col bg-gray-transparent w-[calc(100vw-1rem)] mx-auto rounded p-4 gap-2"
+        >
+          <Input
+            label="Email"
+            type="text"
+            error={errors.email as FieldError}
+            register={register}
+            registerName="email"
+            placeholder="Seu email"
+          />
+          <Input
+            label="Senha"
+            type="password"
+            error={errors.password as FieldError}
+            register={register}
+            registerName="password"
+            placeholder="Sua senha"
+          />
+          <Button
+            text="Entrar"
+            className="bg-green-700 text-2xl font-bold h-12 w-full mt-2"
+          />
+        </form>
+      ) : null}
     </main>
   );
 };

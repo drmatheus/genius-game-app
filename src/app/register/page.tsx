@@ -8,7 +8,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../components/button";
 import { useRouter } from "next/navigation";
 import { api } from "../services";
-import { Loading } from "../components/loading";
 import { FileInput } from "../components/inputFile";
 
 const Register = () => {
@@ -154,14 +153,11 @@ const Register = () => {
           {uniqueError ? <p>O {uniqueError} está indisponivel</p> : null}
 
           <Button
-            type="submit"
             text="Cadastrar"
             className="bg-green-700 text-2xl font-bold h-12 w-full mt-2"
           />
         </form>
-      ) : (
-        <Loading />
-      )}
+      ) : null}
     </main>
   );
 };
