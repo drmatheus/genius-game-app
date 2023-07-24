@@ -1,5 +1,6 @@
+"use client";
+
 import Cookies from "js-cookie";
-import { useRouter } from "next/router";
 import { Input } from "../components/input";
 import React, { useEffect, useState } from "react";
 import { useForm, FieldValues, FieldError } from "react-hook-form";
@@ -8,6 +9,7 @@ import { Header } from "../components/header";
 import { api } from "../services";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const loginSchema = z.object({

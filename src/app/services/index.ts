@@ -8,7 +8,7 @@ export const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const token = Cookies.get("userContact@token");
+    const token = Cookies.get("geniusGame@token");
     if (token) {
       config.headers.Authorization = token;
     }
