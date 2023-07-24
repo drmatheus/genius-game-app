@@ -4,7 +4,7 @@ interface IPropsButton {
   text: string;
   disabled?: boolean;
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const Button = ({

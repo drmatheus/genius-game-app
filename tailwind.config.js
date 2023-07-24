@@ -10,6 +10,7 @@ module.exports = {
       animation: {
         shinny: "shinny 750ms linear infinite",
       },
+
       keyframes: {
         shinny: {
           "0%": { opacity: 1 },
