@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        gold: "#daa520",
+      },
       animation: {
         shinny: "shinny 750ms linear infinite",
       },

@@ -48,8 +48,8 @@ export const Header = () => {
             {isLogged ? (
               <>
                 <Link
-                  href="/perfil"
-                  className="bg-green-600 p-1 text-lg text-center rounded"
+                  href="/profile"
+                  className="bg-green-600 p-1 text-lg text-center rounded font-bold"
                 >
                   Perfil
                 </Link>
@@ -59,20 +59,20 @@ export const Header = () => {
                     Cookies.remove("geniusGame@token");
                     router.push("/login");
                   }}
-                  className="bg-green-600 p-1 text-lg text-center w-full rounded"
+                  className="bg-green-600 p-1 text-lg text-center w-full rounded font-bold"
                 />
               </>
             ) : (
               <>
                 <Link
                   href="/register"
-                  className="bg-green-600 p-1 text-lg text-center rounded"
+                  className="bg-green-600 p-1 text-lg text-center rounded font-bold"
                 >
                   Cadastro
                 </Link>
                 <Link
                   href="/login"
-                  className="bg-green-600 p-1 text-lg text-center rounded"
+                  className="bg-green-600 p-1 text-lg text-center rounded font-bold"
                 >
                   Login
                 </Link>
@@ -85,8 +85,8 @@ export const Header = () => {
           {isLogged ? (
             <>
               <Link
-                href="/perfil"
-                className="bg-green-600 p-1 px-4  text-base text-center rounded"
+                href="/profile"
+                className="bg-green-600 p-1 px-4  text-base text-center rounded font-bold"
               >
                 Perfil
               </Link>
@@ -96,20 +96,20 @@ export const Header = () => {
                   Cookies.remove("geniusGame@token");
                   router.push("/login");
                 }}
-                className="bg-green-600 p-1 px-4  text-base text-center rounded"
+                className="bg-green-600 p-1 px-4  text-base text-center rounded font-bold"
               />
             </>
           ) : (
             <>
               <Link
                 href="/register"
-                className="bg-green-600 p-1 px-4 text-base text-center rounded"
+                className="bg-green-600 p-1 px-4 text-base text-center rounded font-bold"
               >
                 Cadastro
               </Link>
               <Link
                 href="/login"
-                className="bg-green-600 p-1 px-4  text-base text-center rounded"
+                className="bg-green-600 p-1 px-4  text-base text-center rounded font-bold"
               >
                 Login
               </Link>
