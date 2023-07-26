@@ -21,7 +21,7 @@ export const ScoreCard = ({
   return (
     <li>
       <Link
-        className="relative border-r-yellow-800 w-full border-t-yellow-800 border-2 flex h-24 gap-2 border-gray-700 bg-gray-700 rounded p-2 "
+        className="relative border-r-yellow-800 w-full border-t-yellow-800 text-white border-2 flex h-24 gap-2 border-gray-700 bg-gray-700 rounded p-2 "
         href={`/user/${_id}`}
       >
         <img

@@ -84,7 +84,7 @@ export const ModalLose = ({
 
       {!isLogged && (
         <div className="bg-green-900 w-full p-4 flex gap-2 flex-col rounded  ">
-          <h2>Faça login e salve sua pontuações!</h2>
+          <h2>Faça login e salve suas pontuações!</h2>
           <Link
             className="-mt-2 mb-4 w-fit underline rounded border-white"
             href="/login"

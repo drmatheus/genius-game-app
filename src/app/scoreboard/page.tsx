@@ -32,7 +32,7 @@ const Scoreboard = () => {
     <main className="flex min-h-screen flex-col gap-4 overflow-hidden bg-green-700 bg-nature bg-cover ">
       <Header />
       <div className="shadow-2xl  w-[calc(100%-1rem)] pb-4 p-1 bg-gray-transparent rounded mx-auto sm:max-w-screen-xl sm:w-full ">
-        <h1 className="text-2xl font-semibold pl-2">Ranking</h1>
+        <h1 className="text-2xl font-semibold pl-2 text-white">Ranking</h1>
         <ul className="grid grid-cols-1 gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 p-2">
           {scores.map((s, i) => (
             <ScoreCard key={s._id} {...s} ranking={i} />

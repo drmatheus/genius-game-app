@@ -9,8 +9,15 @@ interface IGG {
   isLogged: boolean;
 }
 
+const playSound = (a: string) => {
+  const currentAudio = `/do${a}.wav`;
+  const audio = new Audio(currentAudio);
+  audio.play();
+};
+
 export const GG = ({ isLogged }: IGG) => {
   const colorArray = ["blue", "yellow", "red", "green", ""];
+  const audioArray = ["a", "b", "c", "d", ""];
   const [sequencie, setSequencie] = useState<Array<number>>([]);
   const [yourSequencie, setYourSequencie] = useState<Array<number>>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -38,6 +45,10 @@ export const GG = ({ isLogged }: IGG) => {
     }
     setSequencie(sequencieArray);
   };
+
+  useEffect(() => {
+    playSound(audioArray[sequencie[currentIndex]]);
+  }, [currentIndex]);
 
   //RUN SEQUENCIE
   useEffect(() => {
@@ -84,7 +95,7 @@ export const GG = ({ isLogged }: IGG) => {
   }, [yourSequencie]);
 
   return (
-    <div className="flex flex-col w-screen max-w-lg justify-center overflow-hidden gap-4 p-4 m-auto  ">
+    <div className="flex flex-col w-screen max-w-lg justify-center overflow-hidden gap-4 p-4 m-auto  text-white ">
       <div className="flex p-3 gap-3 bg-gray-transparent rounded-2xl">
         <Button
           text="Iniciar"
@@ -104,39 +115,51 @@ export const GG = ({ isLogged }: IGG) => {
       </div>
 
       <div className="bg-gray-transparent w-full p-2 rounded-3xl ">
-        <div className="bg-gray-700 border-gray-700 border-[10px] flex  relative aspect-square rounded-full overflow-hidden flex-wrap justify-between gap-3">
+        <div className="bg-gray-700 border-gray-700 border-[10px] flex  relative aspect-square rounded-full overflow-hidden flex-wrap justify-between gap-3 ">
           <Button
             text="0"
-            onClick={() => setYourSequencie([...yourSequencie, 0])}
+            onClick={() => {
+              setYourSequencie([...yourSequencie, 0]);
+              playSound("a");
+            }}
             disabled={isDisabled}
-            className={`w-[calc(50%-6px)] min-w-[calc(50%-6px)] rounded-br-3xl bg-blue-700 aspect-square font-bold  ${
+            className={`w-[calc(50%-6px)] min-w-[calc(50%-6px)] rounded-br-3xl bg-blue-700 aspect-square font-bold active:opacity-20 disabled:cursor-not-allowed ${
               currentColor === "blue" ? "animate-shinny duration-750" : ""
             }`}
           />
 
           <Button
             text="1"
-            onClick={() => setYourSequencie([...yourSequencie, 1])}
+            onClick={() => {
+              playSound("b");
+              setYourSequencie([...yourSequencie, 1]);
+            }}
             disabled={isDisabled}
-            className={` w-[calc(50%-6px)] min-w-[calc(50%-6px)] rounded-bl-3xl bg-yellow-500 aspect-square font-bold ${
+            className={` w-[calc(50%-6px)] min-w-[calc(50%-6px)] rounded-bl-3xl bg-yellow-500 aspect-square font-bold active:opacity-20 disabled:cursor-not-allowed ${
               currentColor === "yellow" ? "animate-shinny duration-750" : ""
             }`}
           />
 
           <Button
             text="2"
-            onClick={() => setYourSequencie([...yourSequencie, 2])}
+            onClick={() => {
+              playSound("c");
+              setYourSequencie([...yourSequencie, 2]);
+            }}
             disabled={isDisabled}
-            className={` w-[calc(50%-6px)] min-w-[calc(50%-6px)] rounded-tr-3xl bg-red-700 aspect-square font-bold ${
+            className={` w-[calc(50%-6px)] min-w-[calc(50%-6px)] rounded-tr-3xl bg-red-700 aspect-square font-bold active:opacity-20 disabled:cursor-not-allowed ${
               currentColor === "red" ? "animate-shinny duration-750" : ""
             }`}
           />
 
           <Button
             text="3"
-            onClick={() => setYourSequencie([...yourSequencie, 3])}
+            onClick={() => {
+              playSound("d");
+              setYourSequencie([...yourSequencie, 3]);
+            }}
             disabled={isDisabled}
-            className={` w-[calc(50%-6px)] min-w-[calc(50%-6px)] rounded-tl-3xl bg-green-700 aspect-square font-bold ${
+            className={` w-[calc(50%-6px)] min-w-[calc(50%-6px)] rounded-tl-3xl bg-green-700 aspect-square font-bold active:opacity-20 disabled:cursor-not-allowed ${
               currentColor === "green" ? "animate-shinny duration-750" : ""
             }`}
           />

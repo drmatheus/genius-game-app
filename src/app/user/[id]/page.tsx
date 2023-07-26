@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/app/components/Loading";
 import { Button } from "@/app/components/button";
 import { Header } from "@/app/components/header";
 import { ScoreColor } from "@/app/components/scoreColor";
@@ -41,10 +42,10 @@ const Profile = ({ params }: { params: { id: string } }) => {
     getData();
   }, []);
 
-  if (isLoading) return <div>Carregando ...</div>;
+  if (isLoading) return <Loading />;
 
   return (
-    <main className="flex min-h-screen  flex-col gap-4 overflow-hidden bg-nature bg-cover pb-4">
+    <main className="flex min-h-screen text-white  flex-col gap-4 overflow-hidden bg-nature bg-cover pb-4">
       <Header />
       <div className="flex  flex-col m-auto max-w-xl gap-4 w-screen ">
         <div className="flex  relative mx-4 gap-4">

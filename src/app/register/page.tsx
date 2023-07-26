@@ -23,7 +23,9 @@ const Register = () => {
         .string()
         .min(8, "Sua senha deve conter pelo menos 8 caracteres"),
       email: z.string().email("Email invalido"),
-      picture: z.string({ description: "Por favor selecione uma imagem" }),
+      picture: z
+        .string({ description: "Por favor selecione uma imagem" })
+        .min(5, "Por favor selecione uma imagem"),
       nickname: z
         .string({ description: "Escolha seu nickname" })
         .min(4, "Seu nickname deve conter pelo menos 8 caracteres"),
@@ -84,11 +86,13 @@ const Register = () => {
   };
 
   return (
-    <main className="flex min-h-screen flex-col gap-4 overflow-hidden bg-nature pb-4">
+    <main className="flex min-h-screen flex-col gap-4 overflow-hidden bg-nature pb-4 bg-cover">
       <Header />
-      <h2 className="text-3xl my-4 font-extrabold bg-gray-transparent w-fit p-2 ml-2 rounded">
-        Cadastrar
-      </h2>
+      <div className=" flex max-w-xl w-screen mx-auto">
+        <h2 className="text-3xl my-4  text-white font-extrabold bg-gray-transparent w-fit p-2 ml-2 rounded">
+          Cadastrar
+        </h2>
+      </div>
 
       {!isLoading ? (
         <form
@@ -148,7 +152,11 @@ const Register = () => {
             setValue={setValue}
           />
 
-          {errors?.picture && <p>{errors.picture.message as String}</p>}
+          {errors?.picture && (
+            <p className="text-xs -mt-5 bg-red-700 w-fit p-1 rounded-3xl ">
+              *{errors.picture.message as String}
+            </p>
+          )}
 
           {uniqueError ? <p>O {uniqueError} está indisponivel</p> : null}
 
