@@ -56,11 +56,13 @@ const Login = () => {
   };
 
   return (
-    <main className="flex min-h-screen flex-col gap-4 overflow-hidden bg-nature">
+    <main className="flex min-h-screen flex-col gap-4 overflow-hidden bg-nature bg-cover">
       <Header />
-      <h2 className="text-3xl my-4 font-extrabold bg-gray-transparent w-fit p-2 ml-2 rounded">
-        Entrar
-      </h2>
+      <div className=" flex max-w-xl w-screen mx-auto">
+        <h2 className="text-3xl my-4 font-extrabold text-white bg-gray-transparent w-fit p-2 ml-2 rounded">
+          Entrar
+        </h2>
+      </div>
 
       {!isLoading ? (
         <form

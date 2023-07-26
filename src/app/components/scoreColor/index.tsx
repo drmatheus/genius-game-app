@@ -53,7 +53,7 @@ export const ScoreColor = ({
     <li
       className={`${defineColor(
         score
-      )} flex min-w-[2.5rem] w-fit bg-golden p-2 aspect-square rounded justify-center items-center font-bold  ${className} `}
+      )} flex min-w-[2.5rem] w-fit text-white bg-golden p-2 aspect-square rounded justify-center items-center font-bold  ${className} `}
     >
       <span>{score}</span>
     </li>

@@ -17,7 +17,7 @@ export const Button = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`rounded w-fit p-1 ${className}`}
+      className={`rounded w-fit p-1 text-white ${className}`}
     >
       {text}
     </button>

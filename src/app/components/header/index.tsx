@@ -41,7 +41,7 @@ export const Header = () => {
         <Button
           onClick={dropdownToogle}
           text="|||"
-          className="rotate-90 font-bold sm:hidden"
+          className="rotate-90 font-bold sm:hidden "
         />
         {isOpen && (
           <div className="absolute right-2 top-12 flex flex-col gap-2 w-32 bg-gray-transparent p-2 rounded z-10 ">
@@ -49,7 +49,7 @@ export const Header = () => {
               <>
                 <Link
                   href="/profile"
-                  className="bg-green-600 p-1 text-lg text-center rounded font-bold"
+                  className="bg-green-600 p-1 text-white text-lg text-center rounded font-bold"
                 >
                   Perfil
                 </Link>
@@ -66,13 +66,13 @@ export const Header = () => {
               <>
                 <Link
                   href="/register"
-                  className="bg-green-600 p-1 text-lg text-center rounded font-bold"
+                  className="bg-green-600 text-white p-1 text-lg text-center rounded font-bold"
                 >
                   Cadastro
                 </Link>
                 <Link
                   href="/login"
-                  className="bg-green-600 p-1 text-lg text-center rounded font-bold"
+                  className="bg-green-600 text-white p-1 text-lg text-center rounded font-bold"
                 >
                   Login
                 </Link>
@@ -86,7 +86,7 @@ export const Header = () => {
             <>
               <Link
                 href="/profile"
-                className="bg-green-600 p-1 px-4  text-base text-center rounded font-bold"
+                className="bg-green-600 p-1 px-4 text-white text-base text-center rounded font-bold"
               >
                 Perfil
               </Link>
@@ -103,13 +103,13 @@ export const Header = () => {
             <>
               <Link
                 href="/register"
-                className="bg-green-600 p-1 px-4 text-base text-center rounded font-bold"
+                className="bg-green-600 p-1 text-white px-4 text-base text-center rounded font-bold"
               >
                 Cadastro
               </Link>
               <Link
                 href="/login"
-                className="bg-green-600 p-1 px-4  text-base text-center rounded font-bold"
+                className="bg-green-600 p-1 text-white px-4  text-base text-center rounded font-bold"
               >
                 Login
               </Link>

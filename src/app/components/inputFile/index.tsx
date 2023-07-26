@@ -29,7 +29,10 @@ export const FileInput = ({ label, setValue, register }: TPInput) => {
           "Content-Type": "multipart/form-data",
         },
       });
-      setValue("picture", photoData.location);
+      if (photoData.location) {
+        console.log(photoData.location);
+        setValue("picture", photoData.location);
+      }
       setSelectedFileName(photoData.location);
     } else {
       setSelectedFileName("");
@@ -37,7 +40,7 @@ export const FileInput = ({ label, setValue, register }: TPInput) => {
   };
 
   return (
-    <div className=" flex justify-between relative w-full  h-20 rounded">
+    <div className=" flex justify-between relative w-full  h-20 rounded text-white">
       {selectedFileName && (
         <img
           className=" max-w-[5rem] aspect-square rounded-lg "

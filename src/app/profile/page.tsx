@@ -41,7 +41,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <main className="flex min-h-screen  flex-col gap-4 overflow-hidden bg-nature bg-cover pb-4">
+    <main className="flex min-h-screen text-white flex-col gap-4 overflow-hidden bg-nature bg-cover pb-4">
       <Header />
 
       {isLoading ? (
