@@ -44,7 +44,7 @@ export const Header = () => {
           className="rotate-90 font-bold sm:hidden "
         />
         {isOpen && (
-          <div className="absolute right-2 top-12 flex flex-col gap-2 w-32 bg-gray-transparent p-2 rounded z-10 ">
+          <div className="absolute right-0 top-8 flex flex-col gap-2 w-48 bg-gray-700 p-2 rounded z-10 ">
             {isLogged ? (
               <>
                 <Link

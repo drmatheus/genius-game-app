@@ -9,6 +9,7 @@ import { Button } from "../components/button";
 import { useRouter } from "next/navigation";
 import { api } from "../services";
 import { FileInput } from "../components/inputFile";
+import Link from "next/link";
 
 const Register = () => {
   const loginSchema = z
@@ -153,7 +154,7 @@ const Register = () => {
           />
 
           {errors?.picture && (
-            <p className="text-xs -mt-5 bg-red-700 w-fit p-1 rounded-3xl ">
+            <p className="text-xs -mt-3 bg-red-700 w-fit p-1 rounded-3xl ">
               *{errors.picture.message as String}
             </p>
           )}
@@ -166,6 +167,30 @@ const Register = () => {
           />
         </form>
       ) : null}
+      <div
+        className={`-mb-8 mx-auto  max-w-7xl w-screen flex p-3 gap-2 ${
+          isLoading && "mt-auto"
+        }`}
+      >
+        <Link
+          href="/"
+          className="border-2 border-gray-100 bg-white text-green-800 font-bold rounded p-2"
+        >
+          GG
+        </Link>
+        <Link
+          href="/scoreboard"
+          className="border-2 border-gray-100 bg-white text-green-800 font-bold rounded p-2"
+        >
+          Ranking
+        </Link>
+        <Link
+          href="/about"
+          className="border-2 border-gray-100 bg-white text-green-800 font-bold rounded p-2"
+        >
+          Sobre
+        </Link>
+      </div>
     </main>
   );
 };

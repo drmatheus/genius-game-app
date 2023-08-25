@@ -114,10 +114,9 @@ export const GG = ({ isLogged }: IGG) => {
         />
       </div>
 
-      <div className="bg-gray-transparent w-full p-2 rounded-3xl ">
+      <div className=" w-full p-2 rounded-3xl ">
         <div className="bg-gray-700 border-gray-700 border-[10px] flex  relative aspect-square rounded-full overflow-hidden flex-wrap justify-between gap-3 ">
           <Button
-            text="0"
             onClick={() => {
               setYourSequencie([...yourSequencie, 0]);
               playSound("a");
@@ -129,7 +128,6 @@ export const GG = ({ isLogged }: IGG) => {
           />
 
           <Button
-            text="1"
             onClick={() => {
               playSound("b");
               setYourSequencie([...yourSequencie, 1]);
@@ -141,7 +139,6 @@ export const GG = ({ isLogged }: IGG) => {
           />
 
           <Button
-            text="2"
             onClick={() => {
               playSound("c");
               setYourSequencie([...yourSequencie, 2]);
@@ -153,7 +150,6 @@ export const GG = ({ isLogged }: IGG) => {
           />
 
           <Button
-            text="3"
             onClick={() => {
               playSound("d");
               setYourSequencie([...yourSequencie, 3]);

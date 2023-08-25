@@ -2,7 +2,6 @@
 import { api } from "@/app/services";
 import React, { useState, ChangeEvent } from "react";
 import { FieldError, UseFormSetValue } from "react-hook-form";
-import noPicture from "../../assets/images/noPicture.jpg";
 
 type TPInput = {
   label: string;
@@ -40,27 +39,40 @@ export const FileInput = ({ label, setValue, register }: TPInput) => {
   };
 
   return (
-    <div className=" flex justify-between relative w-full  h-20 rounded text-white">
-      {selectedFileName && (
-        <img
-          className=" max-w-[5rem] aspect-square rounded-lg "
-          alt="Selecione uma imagem"
-          src={selectedFileName}
+    <>
+      <span>Foto de perfil</span>
+      <div className=" flex justify-between relative w-full  h-20 rounded text-white">
+        <div>
+          {selectedFileName && (
+            <img
+              className=" max-w-[5rem] aspect-square rounded-lg "
+              alt="Selecione uma imagem"
+              src={selectedFileName}
+            />
+          )}
+
+          {!selectedFileName && (
+            <img
+              className=" max-w-[5rem] aspect-square rounded-lg "
+              alt="Selecione uma imagem"
+              src="/noPicture.jpg"
+            />
+          )}
+        </div>
+        <input
+          type="file"
+          id="file-upload"
+          className="hidden"
+          onChange={handleFileChange}
         />
-      )}
-      <input
-        type="file"
-        id="file-upload"
-        className="hidden"
-        onChange={handleFileChange}
-      />
-      <label
-        className=" bg-green-800 h-8 rounded w-fit p-2 pt-1 mt-auto ml-auto "
-        htmlFor="file-upload"
-      >
-        {label}
-      </label>
-      <input className="hidden" type="text" {...register("picture")} />
-    </div>
+        <label
+          className=" bg-green-800 h-8 rounded w-fit p-2 pt-1 mt-auto ml-auto "
+          htmlFor="file-upload"
+        >
+          {label}
+        </label>
+        <input className="hidden" type="text" {...register("picture")} />
+      </div>
+    </>
   );
 };

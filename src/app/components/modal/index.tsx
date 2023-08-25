@@ -95,7 +95,7 @@ export const ModalLose = ({
           <h2>Não tem uma conta?</h2>
           <Link
             className="-mt-2 w-fit underline rounded border-white"
-            href="/login"
+            href="/register"
           >
             Registrar-se
           </Link>

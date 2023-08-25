@@ -26,7 +26,7 @@ module.exports = {
         nature: "url('./assets/images/background.jpg')",
       },
       backgroundColor: {
-        "gray-transparent": "rgba(50, 50, 50, 0.5)",
+        "gray-transparent": "rgba(150, 150, 150, 0.3)",
       },
     },
   },
