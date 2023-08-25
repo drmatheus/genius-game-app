@@ -49,11 +49,13 @@ const Profile = () => {
       ) : (
         <div className="flex  flex-col m-auto max-w-xl gap-4 w-screen ">
           <div className="flex  relative mx-4 gap-4">
-            <img
-              src={user.picture}
-              alt={user.name}
-              className=" w-20 aspect-square rounded-lg"
-            />
+            <div className=" relative w-20 aspect-square rounded-lg ">
+              <img
+                src={user.picture}
+                alt={user.name}
+                className=" absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
             <div className="h-20 p-2 rounded-lg bg-gray-transparent flex flex-col gap-2 w-full ">
               <span className="text-xl font-bold first-letter:capitalize">
                 {user.name}

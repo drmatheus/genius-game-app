@@ -24,11 +24,13 @@ export const ScoreCard = ({
         className="relative border-r-yellow-800 w-full border-t-yellow-800 text-white border-2 flex h-24 gap-2 border-gray-700 bg-gray-700 rounded p-2 "
         href={`/user/${_id}`}
       >
-        <img
-          src={picture}
-          alt={name}
-          className=" w-20 h-20 rounded-full aspect-square"
-        />
+        <div className="min-w-[80px] min-h-[80px] flex aspect-square relative rounded-full overflow-hidden">
+          <img
+            src={picture}
+            alt={name}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
         <div className=" w-1 h-full bg-slate-600 "></div>
         <div className="flex flex-col gap-2">
           <span className="text-lg capitalize">{name}</span>

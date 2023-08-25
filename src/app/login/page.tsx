@@ -10,6 +10,7 @@ import { api } from "../services";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Login = () => {
   const loginSchema = z.object({
@@ -56,7 +57,7 @@ const Login = () => {
   };
 
   return (
-    <main className="flex min-h-screen flex-col gap-4 overflow-hidden bg-nature bg-cover">
+    <main className="flex min-h-screen flex-col gap-4 overflow-hidden bg-green-700 bg-nature bg-cover">
       <Header />
       <div className=" flex max-w-xl w-screen mx-auto">
         <h2 className="text-3xl my-4 font-extrabold text-white bg-gray-transparent w-fit p-2 ml-2 rounded">
@@ -91,6 +92,28 @@ const Login = () => {
           />
         </form>
       ) : null}
+      <div
+        className={`-mb-4 mx-auto mt-auto  max-w-7xl w-screen flex p-3 gap-2`}
+      >
+        <Link
+          href="/"
+          className="border-2 border-gray-100 bg-white text-green-800 font-bold rounded p-2"
+        >
+          GG
+        </Link>
+        <Link
+          href="/scoreboard"
+          className="border-2 border-gray-100 bg-white text-green-800 font-bold rounded p-2"
+        >
+          Ranking
+        </Link>
+        <Link
+          href="/about"
+          className="border-2 border-gray-100 bg-white text-green-800 font-bold rounded p-2"
+        >
+          Sobre
+        </Link>
+      </div>
     </main>
   );
 };

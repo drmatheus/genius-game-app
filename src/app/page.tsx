@@ -42,12 +42,6 @@ export default function Home() {
         >
           Sobre
         </Link>
-        <Link
-          href="/scoreboard"
-          className="border-2 border-gray-100 bg-white text-green-800 font-bold rounded p-2"
-        >
-          Outra coisa
-        </Link>
       </div>
     </main>
   );
